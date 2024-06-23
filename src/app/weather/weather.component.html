@@ -1,3 +1,65 @@
-<div class="div-1">
-  <h1 class="heading">Weather</h1>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <div class="weather-card">
+        <div class="card shadow-lg p-5 mt-5 mb-5">
+          <h2 class="text-center">Weather</h2>
+          <hr>
+
+          <!-- Search Box -->
+          <div class="form-group">
+            <div class="search-box">
+              <input type="text" class="form-control" placeholder="Enter City, State, PinCode, or Country"
+                [(ngModel)]="cityName">
+              <div class="d-flex justify-content-center gap-2 mt-2">
+                <button type="button" class="btn btn-primary" (click)="searchWeather()" data-bs-toggle="modal"
+                  data-bs-target="#weatherModal">
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location not found message -->
+          <div *ngIf="locationNotFound" class="location-not-found">Location not found</div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="weatherModal" tabindex="-1" aria-labelledby="weatherModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="weatherModalLabel">
+                    {{ cityName }} {{ temperature }}°C
+                  </h2>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div *ngIf="weatherData" class="weather-body">
+                    <img [src]="weatherImg" alt="Weather Image" class="weather-img">
+                    <h3>{{ description }}</h3>
+                    <h3>Humidity: {{ humidity }}%</h3>
+                    <h3>Wind Speed: {{ windSpeed }} km/hr</h3>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <marquee width="100%" behavior="scroll" bgcolor="lightblue">
+                    <h5>
+                      {{ cityName }} - {{ temperature }}°C - {{ description }} - Humidity: {{ humidity }}% - Wind Speed:
+                      {{ windSpeed }} km/hr
+                    </h5>
+                  </marquee>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Copyright -->
+          <div class="copyright">
+            &copy; 2024 WeatherApp. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
