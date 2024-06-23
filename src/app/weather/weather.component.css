@@ -1,0 +1,12 @@
+.div-1 {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(255, 157, 0);
+}
+
+.heading {
+  color: rgb(77, 12, 12);
+  font-size: 60px;
+  font-family: 'Times New Roman', Times, serif;
+}
