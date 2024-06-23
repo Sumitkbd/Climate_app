@@ -1,3 +1,5 @@
+
+/*
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -15,3 +17,4 @@ export class WeatherService {
     return this.http.get(`${this.apiUrl}?q=${city}&appid=${this.apiKey}`);
   }
 }
+*/
